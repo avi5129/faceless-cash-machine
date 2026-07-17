@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faceless YouTube Shorts RPM &amp; Retention Calculator</title>
+<meta name="description" content="Estimate your faceless YouTube Shorts ad revenue and product revenue. Pick a niche CPM, enter views, and see what your channel is actually worth — plus the retention levers that move the number.">
+<meta name="keywords" content="youtube shorts rpm calculator, shorts cpm, faceless youtube earnings, youtube monetization calculator, shorts revenue estimate">
+<meta property="og:title" content="Faceless YouTube Shorts RPM &amp; Retention Calculator">
+<meta property="og:description" content="Estimate Shorts ad + product revenue and see the retention levers that move the number.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Shorts RPM & Retention Calculator","applicationCategory":"FinanceApplication","url":"https://avi5129.github.io/faceless-cash-machine/calculator.html"}
+</script>
+<style>
+  :root{--bg:#0b1020;--panel:#121a2f;--ink:#e8edf6;--muted:#9fb0c9;--accent:#3b82f6;--gold:#f5c518;--line:#22304d;--good:#14b8a6;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 30% -10%,#16223f,#0b1020);color:var(--ink);line-height:1.6;}
+  .wrap{max-width:820px;margin:0 auto;padding:28px 20px 70px;}
+  header h1{font-size:27px;margin:0 0 6px;background:linear-gradient(90deg,#fff,#9fc6ff);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  header p{color:var(--muted);margin:0 auto;max-width:600px;font-size:15px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:20px 0;box-shadow:0 8px 30px rgba(0,0,0,.3);}
+  h2{font-size:18px;margin:0 0 12px;color:var(--accent);}
+  label{font-size:13px;color:var(--muted);display:block;margin:12px 0 6px;}
+  input[type=range]{width:100%;}
+  input[type=number],select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0c1426;color:var(--ink);font:inherit;}
+  .row{display:flex;gap:14px;flex-wrap:wrap;}
+  .row>div{flex:1;min-width:200px;}
+  .val{color:var(--gold);font-weight:700;}
+  .out{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+  .box{background:#0c1426;border:1px solid var(--line);border-radius:10px;padding:14px;}
+  .box .k{color:var(--muted);font-size:12.5px;}
+  .box .v{font-size:22px;font-weight:800;color:var(--good);}
+  .box.total .v{color:var(--gold);}
+  .note{color:var(--muted);font-size:13px;margin-top:14px;}
+  a{color:var(--accent);text-decoration:none;}
+  .cta-band{text-align:center;background:linear-gradient(135deg,#102a43,#0f3d3a);border:1px solid var(--line);border-radius:14px;padding:24px;margin:24px 0;}
+  .cta-band h2{color:var(--gold);}
+  button{cursor:pointer;border:none;border-radius:10px;padding:11px 16px;font-weight:700;background:linear-gradient(90deg,var(--gold),#e0a800);color:#1a1300;}
+  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:24px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Shorts RPM &amp; Retention Calculator</h1>
+  <p>Estimate what a faceless Shorts channel actually earns — ad revenue + digital-product revenue — and see which retention levers move the number most.</p>
+</header>
+
+<div class="card">
+  <h2>📊 Your numbers</h2>
+  <div class="row">
+    <div>
+      <label>Niche (sets typical CPM)</label>
+      <select id="niche">
+        <option value="2.5" data-name="Finance / investing">Finance / investing (high CPM ~$2.5–$4)</option>
+        <option value="2.0" data-name="Science / education">Science / education (~$2.0)</option>
+        <option value="1.2" data-name="Productivity">Productivity / how-to (~$1.2)</option>
+        <option value="0.9" data-name="Animals / nature">Animals / nature (~$0.9)</option>
+        <option value="1.5" data-name="History / stories">History / stories (~$1.5)</option>
+      </select>
+    </div>
+    <div>
+      <label>Monthly Shorts views</label>
+      <input id="views" type="number" value="300000" min="0" step="1000">
+    </div>
+  </div>
+  <div class="row" style="margin-top:6px">
+    <div>
+      <label>Link click rate (%) — % of viewers who click your product link</label>
+      <input id="ctr" type="number" value="1.5" min="0" max="100" step="0.1">
+    </div>
+    <div>
+      <label>Buy conversion (%) — of clickers who buy</label>
+      <input id="cvr" type="number" value="3" min="0" max="100" step="0.1">
+    </div>
+  </div>
+  <div class="row" style="margin-top:6px">
+    <div>
+      <label>Product price ($)</label>
+      <input id="price" type="number" value="9" min="0" step="1">
+    </div>
+    <div>
+      <label>Retention uplift from captions (%) — see note</label>
+      <input id="ret" type="range" min="0" max="30" value="12">
+      <div class="val">+<span id="retv">12</span>% views</div>
+    </div>
+  </div>
+  <div style="margin-top:14px"><button onclick="calc()">Calculate</button></div>
+
+  <div class="out">
+    <div class="box"><div class="k">Ad revenue / month</div><div class="v" id="ad">$0</div></div>
+    <div class="box"><div class="k">Product revenue / month</div><div class="v" id="prod">$0</div></div>
+    <div class="box total"><div class="k">Total / month</div><div class="v" id="total">$0</div></div>
+    <div class="box"><div class="k">Days to first $10</div><div class="v" id="days">—</div></div>
+  </div>
+  <p class="note" id="explain"></p>
+</div>
+
+<div class="card">
+  <h2>The retention levers (what actually moves the number)</h2>
+  <ul style="color:var(--muted);font-size:14px">
+    <li><strong style="color:var(--ink)">Word-level captions</strong> — most Shorts are watched muted; captions recover that retention. The slider models a realistic +12% view lift.</li>
+    <li><strong style="color:var(--ink)">Hook in first 1.5s</strong> — swipe-away happens fast; a strong hook is the single biggest retention input.</li>
+    <li><strong style="color:var(--ink)">CC0 / CC-BY visuals</strong> — no copyright claims means no demonetization, so RPM stays at niche max.</li>
+    <li><strong style="color:var(--ink)">Product link placement</strong> — pinned comment + first line of description + on-screen CTA. 3 spots, not 1.</li>
+  </ul>
+  <p class="note">Estimates use CPM/1,000 for ads and click×conversion×price for product revenue. Real numbers vary with audience geography and seasonality. Built from the same faceless pipeline documented in the <a href="https://avi5129.github.io/faceless-cash-machine/">free toolkit</a>.</p>
+</div>
+
+<div class="cta-band">
+  <h2>Want the pipeline that hits these numbers?</h2>
+  <p>Get the full faceless Shorts pipeline guide + monetization playbook (voice fallback, −14 LUFS loudness, stable-ts gold captions, CC0 visuals, 30-day tracker). Ships with runnable Python tools.</p>
+  <a href="https://avi5129.gumroad.com/l/faceless-cash-machine" target="_blank" rel="noopener"><button>Get the toolkit — $9</button></a>
+</div>
+
+<footer><a href="https://avi5129.github.io/faceless-cash-machine/">← Free topic generator</a> · <a href="https://github.com/avi5129/faceless-cash-machine">GitHub</a></footer>
+</div>
+
+<script>
+function calc(){
+  const cpm=parseFloat(document.getElementById('niche').value);
+  let views=parseFloat(document.getElementById('views').value)||0;
+  const ctr=(parseFloat(document.getElementById('ctr').value)||0)/100;
+  const cvr=(parseFloat(document.getElementById('cvr').value)||0)/100;
+  const price=parseFloat(document.getElementById('price').value)||0;
+  const ret=parseInt(document.getElementById('ret').value)||0;
+  document.getElementById('retv').textContent=ret;
+  const adjViews=Math.round(views*(1+ret/100));
+  const ad=adjViews/1000*cpm;
+  const prod=adjViews*ctr*cvr*price;
+  const total=ad+prod;
+  document.getElementById('ad').textContent='$'+ad.toFixed(0);
+  document.getElementById('prod').textContent='$'+prod.toFixed(0);
+  document.getElementById('total').textContent='$'+total.toFixed(0);
+  const daily=total/30;
+  document.getElementById('days').textContent = daily>0 ? (10/daily).toFixed(1) : '—';
+  document.getElementById('explain').textContent =
+    `With +${ret}% retention from captions, ${adjViews.toLocaleString()} adjusted views/mo. `+
+    `Ads ≈ $${ad.toFixed(0)}; product sales ≈ ${Math.max(0,Math.round(adjViews*ctr*cvr))}/mo × $${price} = $${prod.toFixed(0)}. `+
+    `Your first $10 lands in about ${(10/Math.max(daily,0.0001)).toFixed(1)} days at this rate.`;
+}
+calc();
+</script>
+</body>
+</html>

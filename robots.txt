@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avi5129.github.io/faceless-cash-machine/sitemap.xml
