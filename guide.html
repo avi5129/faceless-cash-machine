@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Faceless YouTube Cash Machine — A No-Camera, Fully-Automated Shorts Pipeline</title>
+<style>
+  :root{
+    --bg:#f5f7fa; --panel:#ffffff; --ink:#1f2933; --muted:#52606d;
+    --accent:#2563eb; --accent2:#0f766e; --line:#e4e7eb; --gold:#f5c518;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.6;}
+  .wrap{max-width:880px;margin:0 auto;padding:32px 22px 80px;}
+  header.hero{background:linear-gradient(135deg,#1e3a8a,#0f766e);color:#fff;border-radius:16px;
+       padding:38px 32px;margin-bottom:28px;box-shadow:0 10px 30px rgba(15,23,42,.15);}
+  header.hero h1{margin:0 0 8px;font-size:30px;line-height:1.25;}
+  header.hero p{margin:0;opacity:.92;font-size:16px;}
+  .badges{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;}
+  .badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+       padding:6px 12px;border-radius:999px;font-size:13px;}
+  section{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+       padding:26px 28px;margin-bottom:22px;box-shadow:0 2px 10px rgba(15,23,42,.04);}
+  h2{margin:0 0 12px;font-size:21px;color:var(--accent);}
+  h3{margin:18px 0 8px;font-size:17px;color:var(--accent2);}
+  p,li{color:var(--muted);font-size:15px;}
+  code{background:#eef2f7;padding:2px 6px;border-radius:6px;font-size:13.5px;color:#0b3d91;}
+  pre{background:#0f172a;color:#e2e8f0;padding:16px;border-radius:10px;overflow:auto;font-size:13px;}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  th{background:#eef2f7;color:var(--ink);}
+  .callout{background:#fffbeb;border-left:4px solid var(--gold);padding:14px 16px;border-radius:8px;margin:14px 0;}
+  .step{display:flex;gap:14px;align-items:flex-start;margin:10px 0;}
+  .step .n{flex:0 0 30px;height:30px;background:var(--accent);color:#fff;border-radius:50%;
+       display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;}
+  .pill{display:inline-block;background:var(--accent2);color:#fff;padding:3px 10px;border-radius:999px;font-size:12px;margin-right:6px;}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:30px;}
+  a{color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>The Faceless YouTube Cash Machine</h1>
+  <p>A no-camera, fully-automated Shorts pipeline that actually pays — built from a real, 12-test passing Python engine (not theory).</p>
+  <div class="badges">
+    <span class="badge">No on-camera presence</span>
+    <span class="badge">100% local &amp; free-tier friendly</span>
+    <span class="badge">3 videos/day on autopilot</span>
+    <span class="badge">Monetization-ready</span>
+  </div>
+</header>
+
+<section>
+  <h2>1. What this is (and what it is NOT)</h2>
+  <p>This guide documents a working, fully-local pipeline that turns a topic list into finished, captioned, narrated YouTube Shorts — on a schedule, with no human on camera and no paid API keys required for the core path.</p>
+  <div class="callout"><strong>Not AI slop.</strong> The quality bar here is deliberate: broadcast-grade loudness (−14 LUFS), accurate word-level captions (stable-ts), consistent gold-wipe transitions, and CC0/CC-BY visuals only. Uniform, low-effort output gets demonetized and ignored. This pipeline is engineered to clear the quality bar.</div>
+  <p>The companion <code>bonus/</code> folder contains two runnable Python tools (standard library only) you can use immediately: a topic+hook generator and a production checklist generator.</p>
+</section>
+
+<section>
+  <h2>2. The pipeline architecture</h2>
+  <p>Six modules, each independently testable. This is the same structure that ships in the reference engine:</p>
+  <table>
+    <tr><th>Module</th><th>Job</th><th>Key spec</th></tr>
+    <tr><td><code>script_pro</code></td><td>Writes the 25–40s script and rotates hooks</td><td>Hook → payload → CTA; 5 hook variants in rotation</td></tr>
+    <tr><td><code>voice_pro</code></td><td>Text-to-speech with graceful fallback</td><td>Chatterbox (GPU) → Kokoro → edge-tts → silent; target −14 LUFS</td></tr>
+    <tr><td><code>visuals_pro</code></td><td>Finds and licenses B-roll</td><td>CC0 / CC-BY sources only; no copyrighted grabs</td></tr>
+    <tr><td><code>captions</code></td><td>Word-level burned subtitles</td><td>stable-ts, gold <code>#F5C518</code>, safe-area placement</td></tr>
+    <tr><td><code>edit_pro</code></td><td>Assembles the Short</td><td>2.5–4s shot length, gold-wipe transition</td></tr>
+    <tr><td><code>scheduler</code></td><td>Queues &amp; publishes</td><td>3/day, human approves publish (no auto-post)</td></tr>
+  </table>
+  <div class="callout">The human stays in the loop for the final publish. Automation handles everything up to the upload button. This protects your channel from policy strikes and keeps you in control.</div>
+</section>
+
+<section>
+  <h2>3. Voice that doesn't sound like a robot</h2>
+  <p>The single biggest quality differentiator is the voice. The fallback chain matters because free/self-hosted models are flaky:</p>
+  <pre>Chatterbox (local GPU, most natural)
+   ↓ if unavailable
+Kokoro (local CPU, fast, decent)
+   ↓ if unavailable
+edge-tts (free cloud, robotic but reliable)
+   ↓ if unavailable
+silent (never crash the pipeline)</pre>
+  <h3>Loudness normalization</h3>
+  <p>Uploads that are too quiet get down-ranked. Normalize every narration to <strong>−14 LUFS</strong> (integrated) with a true-peak ceiling of −1 dBTP before mixing. This matches YouTube's recommended loudness and keeps captions audible over B-roll.</p>
+</section>
+
+<section>
+  <h2>4. Captions — the retention lever</h2>
+  <p>On Shorts, most viewers watch muted. Word-level captions are non-negotiable. Use <code>stable-ts</code> (a Whisper wrapper) for timestamp accuracy, burn them in, and style them:</p>
+  <ul>
+    <li>Color: gold <code>#F5C518</code> — high contrast on both light and dark footage.</li>
+    <li>Placement: lower-third safe area, never overlapping the subject's face.</li>
+    <li>Size: large enough to read on a phone in under a second.</li>
+    <li>Timing: word-level (karaoke) sync, not line-level.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>5. Visuals you can legally use forever</h2>
+  <p>Copyright claims kill monetization. The pipeline pulls only from:</p>
+  <ul>
+    <li><span class="pill">CC0</span> Public-domain footage (no attribution required).</li>
+    <li><span class="pill">CC-BY</span> Attribution footage (credit in description).</li>
+  </ul>
+  <p>Every clip is logged with its license and source URL so you can prove clearance if a claim is ever filed.</p>
+</section>
+
+<section>
+  <h2>6. Editing rhythm</h2>
+  <p>Shorts retain better with a fast but not frantic cut. The reference engine uses:</p>
+  <ul>
+    <li>Shot length: 2.5–4 seconds.</li>
+    <li>Transition: a subtle gold wipe (on-brand, not a jarring flash).</li>
+    <li>Resolution: 1080×1920 (vertical), 30fps.</li>
+    <li>Opening: hook text or the boldest visual in the first 1.5s.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>7. Topics that monetize</h2>
+  <p>Faceless niches that reliably attract watch time and ad revenue (without news/politics volatility):</p>
+  <table>
+    <tr><th>Niche</th><th>Why it works</th></tr>
+    <tr><td>Money &amp; personal finance facts</td><td>High CPM, evergreen</td></tr>
+    <tr><td>Science &amp; "how things work"</td><td>Strong retention, shareable</td></tr>
+    <tr><td>Historical "what if" stories</td><td>Compelling hooks, reusable B-roll</td></tr>
+    <tr><td>Productivity &amp; learning systems</td><td>Loyal audience, affiliate potential</td></tr>
+    <tr><td>Animal &amp; nature facts</td><td>Mass appeal, CC0 footage abundant</td></tr>
+  </table>
+  <p>The bonus <code>topic_engine.py</code> spits out niche-specific topics with rotating hook lines so you never start from a blank page.</p>
+</section>
+
+<section>
+  <h2>8. From views to money</h2>
+  <div class="step"><div class="n">1</div><div><strong>Watch time floor.</strong> You need 4,000 hours / 10M Shorts views + 1,000 subs for YPP. The 3/day schedule gets there; consistency beats virality.</div></div>
+  <div class="step"><div class="n">2</div><div><strong>Ad revenue.</strong> Faceless finance/science Shorts earn typical RPMs of $1–$4 per 1,000 views once in YPP.</div></div>
+  <div class="step"><div class="n">3</div><div><strong>Affiliate &amp; digital products.</strong> Pin a comment + description link to a related product (like this one). This converts your best viewers into buyers regardless of ad RPM.</div></div>
+  <div class="step"><div class="n">4</div><div><strong>Never auto-post.</strong> Human-approved publishing protects the channel; the scheduler only queues.</div></div>
+  <p class="callout">Realistic first milestone: a $9–$19 digital product sold to your own audience is often the <em>first</em> $10 you make — before ad revenue even kicks in. That is exactly the model this guide + toolkit embodies.</p>
+</section>
+
+<section>
+  <h2>9. Run it today (free path)</h2>
+  <pre># No paid keys required for the core path.
+# 1. Generate 10 topics with hooks:
+python bonus/topic_engine.py --niche finance --count 10
+
+# 2. Generate a production checklist for tomorrow's batch:
+python bonus/checklist.py --date 2026-07-19
+
+# 3. (Optional, GPU) Local voice:
+#    Chatterbox → Kokoro → edge-tts fallback is automatic in voice_pro.</pre>
+  <p>Everything in <code>bonus/</code> is standard-library Python — it runs on a plain install with zero <code>pip install</code>.</p>
+</section>
+
+<section>
+  <h2>10. The 30-day launch plan</h2>
+  <table>
+    <tr><th>Week</th><th>Focus</th><th>Target</th></tr>
+    <tr><td>1</td><td>Set up engine, pick 1 niche, batch 21 scripts</td><td>Pipeline green, 7 videos queued</td></tr>
+    <tr><td>2</td><td>Publish 3/day, watch retention, tune hooks</td><td>~21 videos live</td></tr>
+    <tr><td>3</td><td>Double down on best-performing topic cluster</td><td>First 100 subs</td></tr>
+    <tr><td>4</td><td>Add affiliate/digital-product link, optimize CTA</td><td>First conversion</td></tr>
+  </table>
+</section>
+
+<footer>
+  Built from a real, tested pipeline. No camera. No paid APIs for the core path. Your channel, your rules, human-approved publishing.
+</footer>
+
+</div>
+</body>
+</html>

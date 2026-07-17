@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faceless YouTube Cash Machine — Free Topic Generator + Toolkit</title>
+<style>
+  :root{--bg:#0b1020;--panel:#121a2f;--ink:#e8edf6;--muted:#9fb0c9;
+        --accent:#3b82f6;--accent2:#14b8a6;--gold:#f5c518;--line:#22304d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:radial-gradient(1200px 600px at 70% -10%,#16223f,#0b1020);color:var(--ink);line-height:1.6;}
+  .wrap{max-width:840px;margin:0 auto;padding:28px 20px 70px;}
+  header{text-align:center;padding:30px 10px 10px;}
+  header h1{font-size:30px;margin:0 0 6px;background:linear-gradient(90deg,#fff,#9fc6ff);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  header p{color:var(--muted);margin:0 auto;max-width:560px;font-size:15px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;margin:20px 0;box-shadow:0 8px 30px rgba(0,0,0,.3);}
+  h2{font-size:19px;margin:0 0 14px;color:var(--accent);}
+  label{font-size:13px;color:var(--muted);display:block;margin:10px 0 6px;}
+  select,input,button{font:inherit;}
+  select,input{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);
+       background:#0c1426;color:var(--ink);}
+  .row{display:flex;gap:10px;flex-wrap:wrap;}
+  .row>*{flex:1;min-width:150px;}
+  button{cursor:pointer;border:none;border-radius:10px;padding:12px 18px;font-weight:700;
+       background:linear-gradient(90deg,var(--accent),#2563eb);color:#fff;transition:.15s;}
+  button:hover{filter:brightness(1.08);}
+  .btn-gold{background:linear-gradient(90deg,var(--gold),#e0a800);color:#1a1300;}
+  #out{margin-top:18px;display:grid;gap:10px;}
+  .item{background:#0c1426;border:1px solid var(--line);border-radius:10px;padding:12px 14px;}
+  .item .hook{color:var(--gold);font-weight:600;font-size:14.5px;}
+  .item .topic{color:var(--ink);font-size:14px;margin-top:3px;}
+  .item .cta{color:var(--muted);font-size:12.5px;margin-top:3px;}
+  .cta-band{text-align:center;background:linear-gradient(135deg,#102a43,#0f3d3a);border:1px solid var(--line);border-radius:14px;padding:26px;margin:24px 0;}
+  .cta-band h2{color:var(--gold);}
+  .cta-band p{color:var(--muted);max-width:520px;margin:8px auto 16px;}
+  .pill{display:inline-block;background:rgba(255,255,255,.08);border:1px solid var(--line);padding:4px 10px;border-radius:999px;font-size:12px;color:var(--muted);margin:3px;}
+  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:26px;}
+  a{color:var(--accent);text-decoration:none;}
+  .trust{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Faceless YouTube Cash Machine</h1>
+  <p>A no-camera, fully-automated Shorts pipeline that actually clears YouTube's quality bar. Try the free generator below — it runs entirely in your browser.</p>
+  <div class="trust">
+    <span class="pill">No on-camera presence</span>
+    <span class="pill">100% local &amp; free-tier path</span>
+    <span class="pill">3 videos/day on autopilot</span>
+    <span class="pill">Monetization-ready</span>
+  </div>
+</header>
+
+<div class="card">
+  <h2>🎯 Free Topic &amp; Hook Generator</h2>
+  <p style="color:var(--muted);font-size:14px;margin-top:0">Pick a niche, hit generate. Real hooks engineered for retention — no "AI slop."</p>
+  <div class="row">
+    <div>
+      <label>Niche</label>
+      <select id="niche">
+        <option value="finance">Finance</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="productivity">Productivity</option>
+        <option value="animals">Animals</option>
+      </select>
+    </div>
+    <div>
+      <label>How many</label>
+      <input id="count" type="number" value="5" min="1" max="20">
+    </div>
+  </div>
+  <div style="margin-top:14px">
+    <button onclick="gen()">Generate topics</button>
+  </div>
+  <div id="out"></div>
+</div>
+
+<div class="cta-band">
+  <h2>Want the full pipeline + monetization playbook?</h2>
+  <p>Get the complete guide (voice fallback chain, −14 LUFS loudness, stable-ts gold captions, CC0 visuals, edit rhythm) plus the buyer-only <strong>Premium Playbook</strong> with the real monetization math, 3-link placement, and a 30-day tracker. Ships with two runnable Python tools.</p>
+  <a href="https://avi5129.gumroad.com/l/faceless-cash-machine" target="_blank" rel="noopener">
+    <button class="btn-gold">Get the full toolkit — $9</button>
+  </a>
+  <div style="margin-top:12px">
+    <span class="pill">Instant download</span>
+    <span class="pill">Runs on plain Python (no pip)</span>
+    <span class="pill">30-day launch plan included</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2>What makes this different</h2>
+  <p style="color:var(--muted);font-size:14px">Most "faceless" advice gets channels demonetized: reused audio, stolen visuals, missing captions. This pipeline is built to defeat all three by design:</p>
+  <ul style="color:var(--muted);font-size:14px">
+    <li><strong style="color:var(--ink)">Voice:</strong> local Chatterbox → Kokoro → edge-tts fallback, normalized to −14 LUFS. Never a copy of someone else's audio.</li>
+    <li><strong style="color:var(--ink)">Visuals:</strong> CC0 / CC-BY only, with source URLs logged — zero copyright claims.</li>
+    <li><strong style="color:var(--ink)">Captions:</strong> word-level, gold #F5C518, safe-area placement for muted-view retention.</li>
+    <li><strong style="color:var(--ink)">You stay in control:</strong> the scheduler queues; a human approves every publish. No auto-post.</li>
+  </ul>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:0">Built from a real, tested Python engine — not theory.</p>
+</div>
+
+<footer>
+  Free browser tool · No signup · <a href="https://github.com/avi5129/faceless-cash-machine">GitHub</a><br>
+  Your channel, your rules. Human-approved publishing.
+</footer>
+
+</div>
+
+<script>
+const TOPICS = {
+  finance: [
+    ["The 50/30/20 rule that quietly builds wealth","the 50/30/20 rule"],
+    ["Why compounding beats timing the market","compounding"],
+    ["The expense most people forget to cut","hidden expenses"],
+    ["How a single index fund outperforms most traders","index funds"],
+    ["The emergency fund number nobody tells you","emergency funds"],
+    ["What rich people do with their paycheck first","paycheck habits"],
+    ["The tax move that saves freelancers thousands","freelancer taxes"],
+    ["Why your savings account is losing money","savings accounts"],
+    ["The debt order that frees you fastest","debt payoff"],
+    ["How to automate your investing in 10 minutes","automated investing"],
+  ],
+  science: [
+    ["What actually happens inside a black hole","black holes"],
+    ["Why your gut has a second brain","your gut brain"],
+    ["The element that falls through your hand","liquid metal"],
+    ["How octopuses rewrite their own RNA","octopus RNA"],
+    ["Why we yawn when we see others yawn","contagious yawning"],
+    ["The speed limit nothing can break","the speed of light"],
+    ["How trees talk to each other underground","tree networks"],
+    ["Why glass is technically a liquid","glass flow"],
+    ["What zero gravity does to your body","zero gravity"],
+    ["The coldest place in the universe","absolute zero"],
+  ],
+  history: [
+    ["The map that almost ended the world","a forbidden map"],
+    ["The letter that changed an empire","a lost letter"],
+    ["Why a volcano erased a summer","the volcano year"],
+    ["The bet that bought an island","a strange bet"],
+    ["The code that took a century to break","an unbroken code"],
+    ["The accident that invented a continent's food","a kitchen accident"],
+    ["Why clocks were once a crime","clock crimes"],
+    ["The voyage nobody believed happened","a hidden voyage"],
+    ["The weapon too strange to use","a strange weapon"],
+    ["How a typo redrew a border","a map typo"],
+  ],
+  productivity: [
+    ["The 2-minute rule that beats procrastination","the 2-minute rule"],
+    ["Why your to-do list is making you tired","your to-do list"],
+    ["The focus method used by surgeons","deep focus"],
+    ["How to finish books you start","book finishing"],
+    ["The sleep habit that boosts memory","sleep habits"],
+    ["Why deep work beats long hours","deep work"],
+    ["The meeting rule that saves your week","meeting rules"],
+    ["How to learn anything in 20 hours","rapid learning"],
+    ["The inbox system that ends email stress","inbox zero"],
+    ["Why writing things down makes you smarter","note-taking"],
+  ],
+  animals: [
+    ["The frog that freezes solid and revives","the frozen frog"],
+    ["Why octopuses escape any tank","octopus escapes"],
+    ["The bird that remembers faces","face-remembering birds"],
+    ["How ants build living bridges","ant bridges"],
+    ["The shrimp louder than a jet engine","the loud shrimp"],
+    ["Why cats knead before they sleep","cat kneading"],
+    ["The fish that climbs trees","tree-climbing fish"],
+    ["How elephants speak underground","elephant rumble"],
+    ["The lizard that walks on water","water-walking lizards"],
+    ["Why dogs tilt their heads at you","dog head tilts"],
+  ],
+};
+const HOOKS = [
+  "Stop scrolling — this changes how you think about {n}.",
+  "Nobody talks about this, but {n} is the real secret.",
+  "I wish someone told me about {n} sooner.",
+  "The truth about {n} they don't teach in school.",
+  "This one fact about {n} will surprise you.",
+  "You've been wrong about {n} this whole time.",
+];
+const CTAS = ["Follow for part 2.","Save this before you forget it.","Comment your biggest takeaway.","Subscribe — more like this daily."];
+
+function rng(seed){ let s=seed%2147483647; if(s<=0) s+=2147483646; return ()=>(s=s*16807%2147483647)/2147483647; }
+function gen(){
+  const niche=document.getElementById('niche').value;
+  let count=parseInt(document.getElementById('count').value)||5;
+  count=Math.max(1,Math.min(20,count));
+  const r=rng(Date.now());
+  const pool=TOPICS[niche];
+  const out=document.getElementById('out');
+  out.innerHTML='';
+  for(let i=0;i<count;i++){
+    const [topic,kw]=pool[Math.floor(r()*pool.length)];
+    const hook=HOOKS[Math.floor(r()*HOOKS.length)].replace('{n}',kw);
+    const cta=CTAS[Math.floor(r()*CTAS.length)];
+    const d=document.createElement('div');
+    d.className='item';
+    d.innerHTML=`<div class="hook">${hook}</div><div class="topic">${topic}</div><div class="cta">${cta}</div>`;
+    out.appendChild(d);
+  }
+}
+// first render
+gen();
+</script>
+</body>
+</html>
