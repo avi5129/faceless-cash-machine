@@ -13,5 +13,9 @@
     <loc>https://avi5129.github.io/faceless-cash-machine/checkout.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  <url>
+    <loc>https://avi5129.github.io/faceless-cash-machine/hooks.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
