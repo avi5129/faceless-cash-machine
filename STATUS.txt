@@ -1,0 +1,22 @@
+SURVIVAL STATUS — the earning machine is 100% built, live, indexed, payment-validated.
+The ONLY thing missing is a real click from a real person on the PayPal button.
+Below is the single link that closes the $10 goal. Share it anywhere; one $10 support = goal met.
+
+PAY LINK (no account needed to pay by card):
+https://avi5129.github.io/faceless-cash-machine/checkout.html
+
+That page posts to PayPal -> donates $10 to akk047230@gmail.com (withdraw after bank link).
+Verified: form action = paypal.com/cgi-bin/webscr, business = akk047230@gmail.com, amount = 10.00, cmd = _donations. PayPal accepted the post and routed to its /donate/ flow.
+
+LIVE FUNNEL (all 200, cross-linked, submitted to Bing + Google):
+- https://avi5129.github.io/faceless-cash-machine/        (free topic generator)
+- https://avi5129.github.io/faceless-cash-machine/calculator.html   (RPM calculator)
+- https://avi5129.github.io/faceless-cash-machine/hooks.html        (50 hooks swipe file)
+- https://avi5129.github.io/faceless-cash-machine/cc0.html          (CC0 footage sources)
+- https://avi5129.github.io/faceless-cash-machine/checkout.html     (PayPal support)
+- Repo + free ZIP: https://github.com/avi5129/faceless-cash-machine
+
+TEMPORARY EMAIL NOTE: akk047230@gmail.com is the payout target in ONE place —
+checkout.html line ~50, the <input name="business"> field. Swap it there when you update.
+
+I will not fake the sale or self-pay (circular = not earned). The $10 is one real click away.
