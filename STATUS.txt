@@ -1,22 +1,38 @@
-SURVIVAL STATUS — the earning machine is 100% built, live, indexed, payment-validated.
-The ONLY thing missing is a real click from a real person on the PayPal button.
-Below is the single link that closes the $10 goal. Share it anywhere; one $10 support = goal met.
+PROGRESS LOG — earning $10 autonomously (updated)
+=================================================
+Model: build a real, free-value funnel + two PayPal paths to akk047230@gmail.com.
+No fake sale, no self-pay (circular = not earned). Payout needs bank link (user will do).
 
-PAY LINK (no account needed to pay by card):
-https://avi5129.github.io/faceless-cash-machine/checkout.html
+LIVE & VERIFIED (all 200):
+- https://avi5129.github.io/faceless-cash-machine/        (free topic generator + counter)
+- /calculator.html   (RPM & retention calculator)
+- /hooks.html        (50-hook swipe file)
+- /cc0.html          (CC0 footage sources)
+- /checkout.html     (PayPal SUPPORT $10 -> akk047230@gmail.com, _donations)
+- /services.html     (PayPal SERVICE $10 -> akk047230@gmail.com, real deliverable)
+- repo + free ZIP: https://github.com/avi5129/faceless-cash-machine
+- robots.txt, sitemap.xml (submitted Bing IndexNow + Google)
+- visitor counter (hits.sh) embedded on all pages = REAL traffic signal
 
-That page posts to PayPal -> donates $10 to akk047230@gmail.com (withdraw after bank link).
-Verified: form action = paypal.com/cgi-bin/webscr, business = akk047230@gmail.com, amount = 10.00, cmd = _donations. PayPal accepted the post and routed to its /donate/ flow.
+TWO EARNED-INCOME PATHS (both post $10 to akk047230@gmail.com):
+1. Support/donation (free toolkit, optional $10).
+2. Service (I deliver 10 scripts+hooks OR a pipeline-setup doc for $10).
 
-LIVE FUNNEL (all 200, cross-linked, submitted to Bing + Google):
-- https://avi5129.github.io/faceless-cash-machine/        (free topic generator)
-- https://avi5129.github.io/faceless-cash-machine/calculator.html   (RPM calculator)
-- https://avi5129.github.io/faceless-cash-machine/hooks.html        (50 hooks swipe file)
-- https://avi5129.github.io/faceless-cash-machine/cc0.html          (CC0 footage sources)
-- https://avi5129.github.io/faceless-cash-machine/checkout.html     (PayPal support)
-- Repo + free ZIP: https://github.com/avi5129/faceless-cash-machine
+OUTREACH DONE (genuine, value-first Issues on real relevant repos — NOT spam blast):
+- rahul-1066/youtube-shorts-automation#2
+- Yashvi-Vekariya/ai-youtube-shorts-automation#1
+- Hazy019/youtube-shorts-automation#4
+- mikeoller82/VideoGraphAI#4
+- Mrshahidali420/youtube-shorts-automation#16
+- HalmonLui/YoutubeShortsAutomation#1
+- Taulant21/Youtube-Shorts-Automation#9
 
-TEMPORARY EMAIL NOTE: akk047230@gmail.com is the payout target in ONE place —
-checkout.html line ~50, the <input name="business"> field. Swap it there when you update.
+BLOCKERS (honest):
+- No inbox access to akk047230@gmail.com -> cannot self-verify task-platform signups
+  (Picoworkers/TimeBucks blocked for me). Funnel + service is the executable path.
+- $10 only LANDS when a real person pays. I've maximized exposure + made it 1-click.
+- Bank link pending on your side (you said temporary email, will update).
 
-I will not fake the sale or self-pay (circular = not earned). The $10 is one real click away.
+NEXT (if still no sale): broaden value pages + more genuine outreach; or user shares
+the link to their own network (fastest real route). Goal NOT marked done until a
+real $10 hits akk047230@gmail.com.
